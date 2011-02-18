@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta name="description" content="A knob interface for jQuery UI" />
+	<meta name="keywords" content="jQuery,jqKnobs,Software development,Javascript,UI,design" />
+	<meta name="author" content="Kelly Smith" />
+<title>Check out my knobs</title>
+<!--- <script type="text/javascript" src="../js/jquery-1.4.2.min.js"></script> --->
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" ></script>
+<!--- <script type="text/javascript" src="../js/jquery-ui-1.8.2.custom.min.js"></script> --->
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js"></script>
+<script type="text/javascript" src="js/jquery.jqknob.js"></script>
+
+
+</head>
+<body>
+	 <section id="content">
+		<h1>Knobs</h1>
+
+          <p>I love knobs. When I was creating <a href="../../vrc/" target="_blank">this thing</a>
+		 I wanted a knob interface like the real equipment. Couldn't find a plugin so I made one myself.
+		 </p>
+		 <p>This plugin is real easy to use.<br />
+		 A div for the knob image, and a DOM element that can hold a value.<br />
+		 <sub>html:</sub><br />
+			 <code>&lt;div id="knob"></div>
+			&lt;input type="text" id="knobVal" />
+		</code><br/>
+		</p>
+		<p>In the Javascript jQuery ready function,
+			call the jqKnob passing two options the image name and path, and the element ID from above.<br />
+			<sub>script:</sub><br />
+		<code>$(function(){<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('#knob').jqKnob({<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;knbImgSrc: 'images/knob1.png',<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;knbValID: 'knobVal'<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;})<br />
+			});<br />
+		</code><br />
+		
+		</p>
+         <p>	
+			These knobs are just some quick images I through together to see what can be done.
+			Each a differnt size square with a circle and a transparent backgound.
+			<div>
+			1:<input type="text" id="kv1" value="0"><div id="knobDiv1" class="knob"></div>
+			</div>
+			<br />
+			<div>2:<input type="text" id="kv2" value="0"><div id="knobDiv2" class="knob"></div>
+			</div>
+			<br />
+			<div>3:<input type="text" id="kv3" value="0"><div id="knobDiv3" class="knob"></div>
+			</div>
+		</p>
+		<p>
+		<h3>Known Bugs</h3>
+		Working on all of them
+			<ul>
+			<li>The counter jumps from 0 to 4.</li>
+			<li>Sometimes the knob gets stuck on 9.</li>
+			<li>I'm sure the code is ugly, as this was my first attempt at a jQuery plugin.</li>
+			</ul>
+		</p>
+		    
+
+        </section>
+<footer id="footer">
+		      <div class="width">
+		        <p class="copyright">
+		          <small>
+		            &copy; 2011, All rights reserved.
+		          </small>
+		        </p>
+		        
+		
+		      </div>
+			</footer>
+<script type="text/javascript">
+
+	$(function(){
+		$('#knobDiv1').jqKnob({
+				knbImgSrc: 'images/knobNumbers.png', //this is the image to use for the knob
+				knbValID:'kv1'}//  this is the DOM element to use for returning the value to
+		); 
+		$('#knobDiv2').jqKnob({
+				knbImgSrc: 'images/testKnob.png', 
+				knbValID:'kv2'}
+		);
+		$('#knobDiv3').jqKnob({
+				knbImgSrc: 'images/newKnob60.png', 
+				knbValID:'kv3'}
+		);
+	});
+</script>
+</body>
+</html>
